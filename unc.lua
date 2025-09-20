@@ -4,16 +4,6 @@ local running = 0
 -- FORK OF NamingStandard's UNC TESTER (i edited the unc tester to work better)
 -- it's not out of 83, now its out of 98!
 
---[[
-	[+] Added fireclickdetector, fireproximityprompt and firetouchinterest
-	[+] Added dofile (works on some execs)
-	[+] Added WebSocket check
-	[+] Added all mouse function (module check)
-    [+] Added queue_on_teleport check
-	[+] Added Drawing module check
-    [=] Fixed WebSocket.connect (changed url)
-]]
-
 local function getGlobal(path)
 	local value = getfenv(0)
 
