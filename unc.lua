@@ -9,9 +9,9 @@ local running = 0
 	[+] Added dofile (works on some execs)
 	[+] Added WebSocket check
 	[+] Added all mouse function (module check)
-  [+] Added queue_on_teleport check
+    [+] Added queue_on_teleport check
 	[+] Added Drawing module check
-  [=] Fixed WebSocket.connect (changed url)
+    [=] Fixed WebSocket.connect (changed url)
 ]]
 
 local function getGlobal(path)
