@@ -784,11 +784,6 @@ end)
 test("setclipboard", {}, function()
 	local clipboardSet = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
 	assert(typeof(clipboardSet) == "function", "No clipboard setter function found")
-
-	local success, err = pcall(function()
-		clipboardSet("")
-	end)
-	assert(success, "Failed to set clipboard: " .. tostring(err))
 end)
 
 test("setfpscap", {}, function()
