@@ -7,6 +7,7 @@ This repository is a fork of **NamingStandard's** UNC tester. I upgraded it's fu
 ```
 [+] Added setclipboard module check
 [+] Added getcallingscript (BETA)
+[=] Fixed queue_on_teleport
 ```
 
 20/09/25:
