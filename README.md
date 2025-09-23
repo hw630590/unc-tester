@@ -4,6 +4,11 @@ This repository is a fork of **NamingStandard's** UNC tester. I upgraded it's fu
 
 *Another note: dofile may fail on some executors.*
 
+## How to load?
+Simple.
+
+`loadstring(game:HttpGet("https://raw.githubusercontent.com/hw630590/unc-tester/refs/heads/main/unc.lua"))()`
+
 # What's new?
 23/09/25:
 ```
