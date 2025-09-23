@@ -2,7 +2,7 @@ local passes, fails, undefined = 0, 0, 0
 local running = 0
 
 -- FORK OF NamingStandard's UNC TESTER (i edited the unc tester to work better)
--- it's not out of 83, now its out of 98!
+-- it's not out of 83, now its out of 99!
 
 local function getGlobal(path)
 	local value = getfenv(0)
