@@ -164,7 +164,26 @@ test("clonefunction", {}, function()
 	assert(test ~= copy, "The clone should not be equal to the original")
 end)
 
-test("getcallingscript", {})
+test("getcallingscript", {}, function()
+	local script = Instance.new("LocalScript")
+	script.Name = "DummyScript"
+	getfenv(0).script = script
+
+	local result
+
+	local function inner()
+		result = getcallingscript()
+	end
+
+	local function outer()
+		inner()
+	end
+
+	outer()
+
+	assert(result == script, "getcallingscript should return the correct script")
+end)
+
 
 test("getscriptclosure", {"getscriptfunction"}, function()
 	local module = game:GetService("CoreGui").RobloxGui.Modules.Common.Constants
