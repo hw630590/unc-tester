@@ -1,7 +1,14 @@
 # UNC Tester
 This repository is a fork of **NamingStandard's** UNC tester. I upgraded it's functionality.
+**Currently is out of 99.**
 
 # What's new?
+23/09/25:
+```
+[+] Added setclipboard module check
+[+] Added getcallingscript (BETA)
+```
+
 20/09/25:
 ```
 [+] Added fireclickdetector, fireproximityprompt and firetouchinterest
