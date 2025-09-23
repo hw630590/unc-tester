@@ -2,7 +2,7 @@ local passes, fails, undefined = 0, 0, 0
 local running = 0
 
 -- FORK OF NamingStandard's UNC TESTER (i edited the unc tester to work better)
--- it's not out of 83, now its out of 99!
+-- it's not out of 83, now its out of 100!!!
 
 local function getGlobal(path)
 	local value = getfenv(0)
@@ -772,22 +772,15 @@ test("lz4decompress", {}, function()
 end)
 
 test("messagebox", {})
-local functionsToCheck = {
-    {name = "queue_on_teleport", aliases = {"queueonteleport"}}
-}
 
-for _, fdata in ipairs(functionsToCheck) do
-    test(fdata.name, fdata.aliases or {}, function()
-        local found = rawget(_G, fdata.name)
-        if not found and fdata.aliases then
-            for _, alias in ipairs(fdata.aliases) do
-                found = rawget(_G, alias)
-                if found then break end
-            end
-        end
-    end)
-end
+test("queue_on_teleport", {"queueonteleport"}, function()
+	local found = rawget(_G, "queue_on_teleport")
+	if not found then
+		found = rawget(_G, "queueonteleport")
+	end
 
+	assert(found, "queue_on_teleport or alias queueonteleport not found in _G")
+end)
 test("request", {"http.request", "http_request"}, function()
 	local response = request({
 		Url = "https://httpbin.org/user-agent",
