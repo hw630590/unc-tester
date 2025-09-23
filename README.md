@@ -2,7 +2,7 @@
 This repository is a fork of **NamingStandard's** UNC tester. I upgraded it's functionality.
 **Currently is out of 100.**
 
-*Another note to look out for: dofile may fail on some executors.*
+*Another note: dofile may fail on some executors.*
 
 # What's new?
 23/09/25:
