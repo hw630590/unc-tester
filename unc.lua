@@ -1,4 +1,3 @@
---loadstring(game:HttpGet("https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source"))()
 local passes, fails, undefined = 0, 0, 0
 local running = 0
 
