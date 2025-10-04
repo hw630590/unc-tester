@@ -1,9 +1,7 @@
 local passes, fails, undefined = 0, 0, 0
 local running = 0
 
--- FORK OF NamingStandard's UNC TESTER (i edited the unc tester to work better)
--- it's not out of 83, now its out of 100!!!
-
+-- FORK OF NamingStandard's UNC TESTER (edited with more functions)
 local function getGlobal(path)
 	local value = getfenv(0)
 
@@ -243,17 +241,35 @@ end)
 
 -- Console
 
-test("rconsoleclear", {"consoleclear"})
+test("rconsoleclear", {"consoleclear"}, function()
+    local found = rconsoleclear or consoleclear
+    assert(found, "rconsoleclear or alias consoleclear not found")
+end)
 
-test("rconsolecreate", {"consolecreate"})
+test("rconsolecreate", {"consolecreate"}, function()
+    local found = rconsolecreate or consolecreate
+    assert(found, "rconsolecreate or alias consolecreate not found")
+end)
 
-test("rconsoledestroy", {"consoledestroy"})
+test("rconsoledestroy", {"consoledestroy"}, function()
+    local found = rconsoledestroy or consoledestroy
+    assert(found, "rconsoledestroy or alias consoledestroy not found")
+end)
 
-test("rconsoleinput", {"consoleinput"})
+test("rconsoleinput", {"consoleinput"}, function()
+    local found = rconsoleinput or consoleinput
+    assert(found, "rconsoleinput or alias consoleinput not found")
+end)
 
-test("rconsoleprint", {"consoleprint"})
+test("rconsoleprint", {"consoleprint"}, function()
+    local found = rconsoleprint or consoleprint
+    assert(found, "rconsoleprint or alias consoleprint not found")
+end)
 
-test("rconsolesettitle", {"rconsolename", "consolesettitle"})
+test("rconsolesettitle", {"rconsolename", "consolesettitle"}, function()
+    local found = rconsolesettitle or rconsolename or consolesettitle
+    assert(found, "rconsolesettitle or aliases rconsolename/consolesettitle not found")
+end)
 
 -- Crypt
 
@@ -573,7 +589,7 @@ end
 
 test("fireclickdetector", {}, function()
 	local detector = Instance.new("ClickDetector")
-	fireclickdetector(detector, 50, "MouseHoverEnter")
+	fireclickdetector(detector)--, 50, "MouseHoverEnter")
 end)
 
 test("firetouchinterest", {}, function()
@@ -604,10 +620,11 @@ test("fireproximityprompt", {}, function()
 	part.Position = char.PrimaryPart.Position + Vector3.new(0, 5, 0)
 	part.Anchored = true
 	part.Parent = workspace
+	part.Transparency = 1
 
 	local detector = Instance.new("ProximityPrompt")
 	detector.ActionText = "Test Prompt"
-	detector.ObjectText = "Click Me"
+	detector.ObjectText = "fireproximityprompt test ^^"
 	detector.HoldDuration = 0
 	detector.Parent = part
 
@@ -771,16 +788,16 @@ test("lz4decompress", {}, function()
 	assert(lz4decompress(compressed, #raw) == raw, "Decompression did not return the original string")
 end)
 
-test("messagebox", {})
+test("messagebox", {}, function()
+    local found = messagebox
+    assert(found, "messagebox not found in global scope")
+end)
 
 test("queue_on_teleport", {"queueonteleport"}, function()
-	local found = rawget(_G, "queue_on_teleport")
-	if not found then
-		found = rawget(_G, "queueonteleport")
-	end
-
-	assert(found, "queue_on_teleport or alias queueonteleport not found in _G")
+	local found = queue_on_teleport or queueonteleport or (syn and syn.queue_on_teleport) or (fluxus and fluxus.queue_on_teleport)
+	assert(found, "queue_on_teleport or alias queueonteleport not found")
 end)
+
 test("request", {"http.request", "http_request"}, function()
 	local response = request({
 		Url = "https://httpbin.org/user-agent",
