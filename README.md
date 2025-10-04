@@ -16,7 +16,7 @@ It's very easy to load, just paste this into your executor.
 ```
 [+] Added messagebox test
 [+] Added rconsole checks
-[=] Fixed queue_on_teleport again
+[~] Fixed queue_on_teleport again
 [~] Changed fireclickdetector and fireproximityprompt a bit
 ```
 
@@ -24,7 +24,7 @@ It's very easy to load, just paste this into your executor.
 ```
 [+] Added setclipboard module check
 [+] Added getcallingscript (BETA)
-[=] Fixed queue_on_teleport
+[~] Fixed queue_on_teleport
 ```
 
 20/09/25:
@@ -35,5 +35,5 @@ It's very easy to load, just paste this into your executor.
 [+] Added all mouse function (module check) (e.g. mouse1click, mouse1press, etc)
 [+] Added queue_on_teleport check
 [+] Added Drawing module check
-[=] Fixed WebSocket.connect (changed url)
+[~] Fixed WebSocket.connect (changed url)
 ```
