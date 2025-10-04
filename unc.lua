@@ -2,6 +2,7 @@ local passes, fails, undefined = 0, 0, 0
 local running = 0
 
 -- FORK OF NamingStandard's UNC TESTER (edited with more functions)
+
 local function getGlobal(path)
 	local value = getfenv(0)
 
@@ -589,7 +590,7 @@ end
 
 test("fireclickdetector", {}, function()
 	local detector = Instance.new("ClickDetector")
-	fireclickdetector(detector)--, 50, "MouseHoverEnter")
+	fireclickdetector(detector)
 end)
 
 test("firetouchinterest", {}, function()
