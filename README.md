@@ -20,6 +20,7 @@ It's very easy to load, just follow these steps below!
 [+] Added rconsole checks
 [~] Fixed queue_on_teleport again
 [~] Changed fireclickdetector and fireproximityprompt a bit
+[~] Changed getcallingscript to module check
 ```
 
 23/09/25:
