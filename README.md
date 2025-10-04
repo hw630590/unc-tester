@@ -1,6 +1,6 @@
 # UNC Tester
 This repository is a fork of **NamingStandard's** UNC tester. I upgraded it's functionality.
-**Currently is out of 100.**
+**Currently is out of 107.**
 
 *Another note: dofile may fail on some executors.*
 
@@ -10,6 +10,14 @@ Simple.
 `loadstring(game:HttpGet("https://raw.githubusercontent.com/hw630590/unc-tester/refs/heads/main/unc.lua"))()`
 
 # What's new?
+04/10/25:
+```
+[+] Added messagebox test
+[+] Added rconsole checks
+[=] Fixed queue_on_teleport again
+[~] Changed fireclickdetector and fireproximityprompt a bit
+```
+
 23/09/25:
 ```
 [+] Added setclipboard module check
