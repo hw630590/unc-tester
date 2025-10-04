@@ -2,10 +2,12 @@
 This repository is a fork of **NamingStandard's** UNC tester. I upgraded it's functionality.
 **Currently is out of 107.**
 
-*Another note: dofile may fail on some executors.*
+I am working on adding more functions to this UNC tester, and I update it when I can and I'm not busy.
 
 ## How to load?
-Simple.
+It's very easy to load, just paste this into your executor.
+1. Load up your executor (can be any Roblox executor (e.g. Solara, Xeno, Volcano, etc))
+2. Inject into Roblox and paste this in:
 
 `loadstring(game:HttpGet("https://raw.githubusercontent.com/hw630590/unc-tester/refs/heads/main/unc.lua"))()`
 
