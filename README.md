@@ -11,6 +11,8 @@ It's very easy to load, just follow these steps below!
 
 `loadstring(game:HttpGet("https://raw.githubusercontent.com/hw630590/unc-tester/refs/heads/main/unc.lua"))()`
 
+3. Click 'Execute' or 'Run' on your executor.
+
 # What's new?
 04/10/25:
 ```
