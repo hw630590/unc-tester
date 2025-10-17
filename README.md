@@ -14,6 +14,21 @@ It's very easy to load, just follow these steps below!
 3. Click 'Execute' or 'Run' on your executor.
 
 # What's new?
+17/10/25:
+```
+[-] fireproximityprompt may break on new executors
+[+] Improved firetouchinterest & fireclickdetector
+! Features below are new and may error !
+[+] Added actors (run_on_actor, getactorfronthread, getactorthreads, create_comm_channel, get_comm_channel, getactors, checkparallel)
+[+] Added more functions:
+- getsimulationradius
+- setsimulationradius
+- isnetworkowner
+- getproximitypromptduration
+- setproximitypromptduration
+[+] Added setstackhidden
+```
+
 04/10/25:
 ```
 [+] Added messagebox test
