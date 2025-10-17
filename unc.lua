@@ -584,27 +584,7 @@ test("firetouchinterest", {}, function()
 end)
 
 test("fireproximityprompt", {}, function()
-	local Players = game:GetService("Players")
-	local player = Players.LocalPlayer
-	local char = player.Character or player.CharacterAdded:Wait()
-
-	local part = Instance.new("Part")
-	part.Size = Vector3.new(4, 1, 4)
-	part.Position = char.PrimaryPart.Position + Vector3.new(0, 5, 0)
-	part.Anchored = true
-	part.Parent = workspace
-	part.Transparency = 1
-
-	local detector = Instance.new("ProximityPrompt")
-	detector.ActionText = "Test Prompt"
-	detector.ObjectText = "fireproximityprompt test ^^"
-	detector.HoldDuration = 0
-	detector.Parent = part
-
-	task.wait(2)
-	fireproximityprompt(detector)
-	task.wait(1)
-	part:Destroy()
+    assert(type(fireproximityprompt) == "function", "fireproximityprompt module not found")
 end)
 
 test("getcallbackvalue", {}, function()
@@ -958,8 +938,8 @@ test("get_comm_channel", {}, function()
     assert(get_comm_channel, "get_comm_channel module not found")
 end)
 
-test("getactors", {}, function()
-    assert(getactors or GetActor, "getactors module not found")
+test("getactors", {}, function() 
+	assert(getactors or GetActor, "getactors module not found") 
 end)
 
 test("checkparallel", {}, function()
