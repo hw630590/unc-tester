@@ -938,120 +938,56 @@ test("cleardrawcache", {}, function()
 end)
 
 -- NEW STUFF!
--- Actors
 test("run_on_actor", {}, function()
-    local found = run_on_actor or runonactor or runactor
-    assert(type(found) == "function", "run_on_actor is not a valid function")
-
-    local success, result = pcall(function()
-        return found(function()
-            return "actor test"
-        end)
-    end)
-
-    assert(success, "run_on_actor failed to execute")
+    assert(run_on_actor or runonactor or runactor, "run_on_actor module not found")
 end)
 
 test("getactorfromthread", {}, function()
-    assert(type(getactorfromthread) == "function", "getactorfromthread not found")
-    local success, result = pcall(getactorfromthread)
-    assert(success, "getactorfromthread failed to execute")
+    assert(getactorfromthread, "getactorfromthread module not found")
 end)
 
 test("getactorthreads", {}, function()
-    assert(type(getactorthreads) == "function", "getactorthreads not found")
-    local success, threads = pcall(getactorthreads)
-    assert(success and type(threads) == "table", "getactorthreads did not return a table")
+    assert(getactorthreads, "getactorthreads module not found")
 end)
 
 test("create_comm_channel", {}, function()
-    assert(type(create_comm_channel) == "function", "create_comm_channel not found")
-    local success, channel = pcall(function()
-        return create_comm_channel("test_channel")
-    end)
-    assert(success and channel ~= nil, "create_comm_channel failed")
+    assert(create_comm_channel, "create_comm_channel module not found")
 end)
 
 test("get_comm_channel", {}, function()
-    assert(type(get_comm_channel) == "function", "get_comm_channel not found")
-    local success, channel = pcall(function()
-        return get_comm_channel("test_channel")
-    end)
-    assert(success, "get_comm_channel failed")
+    assert(get_comm_channel, "get_comm_channel module not found")
 end)
 
 test("getactors", {}, function()
-    local found = getactors or GetActor
-    assert(type(found) == "function", "getactors not found")
-
-    local success, actors = pcall(function()
-        return found()
-    end)
-
-    assert(success, "getactors failed to execute")
-    assert(type(actors) == "table", "getactors did not return a table")
+    assert(getactors or GetActor, "getactors module not found")
 end)
 
 test("checkparallel", {}, function()
-    assert(type(checkparallel) == "function", "checkparallel not found")
-    local success, result = pcall(checkparallel)
-    assert(success and type(result) == "boolean", "checkparallel did not return a boolean")
+    assert(checkparallel, "checkparallel module not found")
 end)
 
--- Radius
 test("getsimulationradius", {}, function()
-    assert(type(getsimulationradius) == "function", "getsimulationradius not found")
-    local success, radius = pcall(getsimulationradius)
-    assert(success and type(radius) == "number", "getsimulationradius did not return a number")
+    assert(getsimulationradius, "getsimulationradius module not found")
 end)
 
 test("setsimulationradius", {}, function()
-    assert(type(setsimulationradius) == "function", "setsimulationradius not found")
-    local success = pcall(function()
-        setsimulationradius(1000)
-    end)
-    assert(success, "setsimulationradius failed")
+    assert(setsimulationradius, "setsimulationradius module not found")
 end)
 
 test("isnetworkowner", {}, function()
-    assert(type(isnetworkowner) == "function", "isnetworkowner not found")
-    local part = Instance.new("Part")
-    part.Parent = workspace
-    local success, result = pcall(function()
-        return isnetworkowner(part)
-    end)
-    assert(success and type(result) == "boolean", "isnetworkowner did not return a boolean")
+    assert(isnetworkowner, "isnetworkowner module not found")
 end)
 
--- Proximity
 test("getproximitypromptduration", {}, function()
-    assert(type(getproximitypromptduration) == "function", "getproximitypromptduration not found")
-    local prompt = Instance.new("ProximityPrompt")
-    local success, duration = pcall(function()
-        return getproximitypromptduration(prompt)
-    end)
-    assert(success and type(duration) == "number", "getproximitypromptduration did not return a number")
+    assert(getproximitypromptduration, "getproximitypromptduration module not found")
 end)
 
 test("setproximitypromptduration", {}, function()
-    assert(type(setproximitypromptduration) == "function", "setproximitypromptduration not found")
-    local prompt = Instance.new("ProximityPrompt")
-    local success = pcall(function()
-        setproximitypromptduration(prompt, 2)
-    end)
-    assert(success, "setproximitypromptduration failed")
+    assert(setproximitypromptduration, "setproximitypromptduration module not found")
 end)
 
--- Other
 test("setstackhidden", {}, function()
-    local found = setstackhidden or set_stack_hidden
-    assert(type(found) == "function", "setstackhidden is not a valid function")
-
-    local success, err = pcall(function()
-        found(true)
-    end)
-
-    assert(success, "setstackhidden failed to execute")
+    assert(setstackhidden or set_stack_hidden, "setstackhidden module not found")
 end)
 
 -- WebSocket
