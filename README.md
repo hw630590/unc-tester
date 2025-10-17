@@ -1,6 +1,6 @@
 # UNC Tester
 This repository is a fork of **NamingStandard's** UNC tester. I upgraded it's functionality.
-**Currently is out of 107.**
+**Currently is out of 120.**
 
 I am working on adding more functions to this UNC tester, and I update it when I can and when I'm not busy.
 
