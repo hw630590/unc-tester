@@ -19,7 +19,7 @@ It's very easy to load, just follow these steps below!
 [-] fireproximityprompt may break on new executors
 [+] Improved firetouchinterest & fireclickdetector
 ! Features below are new and may error !
-[+] Added actors (run_on_actor, getactorfronthread, getactorthreads, create_comm_channel, get_comm_channel, getactors, checkparallel)
+[+] Added actors (run_on_actor, getactorfromthread, getactorthreads, create_comm_channel, get_comm_channel, getactors, checkparallel)
 [+] Added more functions:
 - getsimulationradius
 - setsimulationradius
