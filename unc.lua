@@ -199,7 +199,7 @@ test("islclosure", {}, function()
 	assert(islclosure(function() end) == true, "Executor function should be a Lua closure")
 end)
 
-test("isexecutorclosure", {"checkclosure", "isourclosure"}, function()
+test("isexecutorclosure", {"checkclosure", "isourclosure", "is_sirhurt_closure"}, function()
 	assert(isexecutorclosure(isexecutorclosure) == true, "Did not return true for an executor global")
 	assert(isexecutorclosure(newcclosure(function() end)) == true, "Did not return true for an executor C closure")
 	assert(isexecutorclosure(function() end) == true, "Did not return true for an executor Luau closure")
@@ -303,7 +303,7 @@ end)
 
 --- Debug
 
-test("debug.getconstant", {}, function()
+test("debug.getconstant", {"getconstant"}, function()
 	local function test()
 		print("Hello, world!")
 	end
@@ -347,7 +347,7 @@ test("debug.getinfo", {}, function()
 	end
 end)
 
-test("debug.getproto", {}, function()
+test("debug.getproto", {"getproto"}, function()
 	local function test()
 		local function proto()
 			return true
@@ -390,7 +390,7 @@ test("debug.getstack", {}, function()
 	assert(debug.getstack(1)[1] == "ab", "The first item in the stack table should be 'ab'")
 end)
 
-test("debug.getupvalue", {}, function()
+test("debug.getupvalue", {"getupvalue"}, function()
 	local upvalue = function() end
 	local function test()
 		print(upvalue)
@@ -398,7 +398,7 @@ test("debug.getupvalue", {}, function()
 	assert(debug.getupvalue(test, 1) == upvalue, "Unexpected value returned from debug.getupvalue")
 end)
 
-test("debug.getupvalues", {}, function()
+test("debug.getupvalues", {"getupvalue"}, function()
 	local upvalue = function() end
 	local function test()
 		print(upvalue)
@@ -433,6 +433,12 @@ test("debug.setupvalue", {}, function()
 		return "success"
 	end)
 	assert(test() == "success", "debug.setupvalue did not set the first upvalue")
+end)
+
+test("debug.getregistry", {}, function()
+    local registry = debug and debug.getregistry and debug.getregistry()
+    local t = typeof(registry)
+    assert(t == "table", "debug.getregistry did not return a table")
 end)
 
 -- Filesystem
@@ -639,7 +645,7 @@ test("sethiddenproperty", {}, function()
 	assert(gethiddenproperty(fire, "size_xml") == 10, "Did not set the hidden property")
 end)
 
-test("gethui", {}, function()
+test("gethui", {"get_hidden_gui", "gethiddengui", "gethgui"}, function()
 	assert(typeof(gethui()) == "Instance", "Did not return an Instance")
 end)
 
